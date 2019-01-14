@@ -13,7 +13,13 @@
         <div class="icon_top">
           <img src="../static/image/xinggui_white.png" alt>
         </div>
-        <Menu active-name="1-1"  @on-select="one_clk()" theme="dark" width="auto" :class="menuitemClasses">
+        <Menu
+          active-name="1-1"
+          @on-select="one_clk()"
+          theme="dark"
+          width="auto"
+          :class="menuitemClasses"
+        >
           <Submenu name="1">
             <template slot="title">
               <Icon type="ios-paper"/>资产
@@ -52,9 +58,20 @@
             </Col>
             <Col span="3">
               <div style="width:100%">
-                <div>欢迎，超级管理员
-                  <Avatar icon="ios-person" size="small"/>
-                </div>
+                <Dropdown @on-click="out_clk()">
+                  <a href="javascript:void(0)">欢迎，超级管理员
+                    <Avatar icon="ios-person" size="small"/>
+                    <Icon type="ios-arrow-down"></Icon>
+                  </a>
+                  <DropdownMenu slot="list">
+                    <DropdownItem>
+                      <Icon size="20" name="center" type="ios-person"/>个人中心
+                    </DropdownItem>
+                    <DropdownItem >
+                      <Icon size="20" name="out" type="md-log-out"/>退出
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
               </div>
             </Col>
           </Row>
@@ -86,9 +103,16 @@ export default {
     collapsedSider() {
       this.$refs.side1.toggleCollapse();
     },
-    one_clk(e){
-      console.log(e)
+    one_clk(e) {
+      console.log(e);
     },
+    out_clk(name) {
+      console.log(name)
+      localStorage.removeItem("token");
+      this.$router.push({
+        name: "login"
+      });
+    }
   }
 };
 </script>
