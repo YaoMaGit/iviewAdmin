@@ -5,15 +5,13 @@ import App from './App'
 import VueRouter from 'vue-router'
 import router from './router'
 import iView from 'iview'
-
+import VueParticles from 'vue-particles'  
 import 'iview/dist/styles/iview.css'
 // import '../my-theme/index.less'
 
 Vue.use(VueRouter)
 Vue.use(iView)
-// const RouterConfig = {
-//   routes: router
-// };
+Vue.use(VueParticles) 
 
 Vue.config.productionTip = false
 

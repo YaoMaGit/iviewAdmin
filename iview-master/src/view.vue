@@ -13,56 +13,28 @@
         <div class="icon_top">
           <img src="../static/image/xinggui_white.png" alt>
         </div>
-        <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
+        <Menu active-name="1-1"  @on-select="one_clk()" theme="dark" width="auto" :class="menuitemClasses">
           <Submenu name="1">
             <template slot="title">
-              <Icon type="ios-paper"/>仪表盘
+              <Icon type="ios-paper"/>资产
             </template>
-            <MenuItem name="1-1">1</MenuItem>
-            <MenuItem name="1-2">2</MenuItem>
-            <MenuItem name="1-3">3</MenuItem>
+            <MenuItem name="1-1" to="/assets">资产报告</MenuItem>
+            <MenuItem name="1-2" to="/assets/assets_items">资产列表</MenuItem>
+            <MenuItem name="1-3" to="/assets/assets_detail">资产详情</MenuItem>
           </Submenu>
           <Submenu name="2">
             <template slot="title">
-              <Icon type="ios-people"/>漏洞管理
+              <Icon type="ios-people"/>漏洞
             </template>
-            <MenuItem name="2-1">1</MenuItem>
-            <MenuItem name="2-2">2</MenuItem>
+            <MenuItem name="2-1">漏洞管理</MenuItem>
+            <MenuItem name="2-2">漏洞详情</MenuItem>
           </Submenu>
           <Submenu name="3">
             <template slot="title">
-              <Icon type="ios-stats"/>任务管理
+              <Icon type="ios-stats"/>V1
             </template>
-            <MenuItem name="2-1">1</MenuItem>
-            <MenuItem name="2-2">2</MenuItem>
-          </Submenu>
-          <Submenu name="4">
-            <template slot="title">
-              <Icon type="ios-stats"/>资产管理
-            </template>
-            <MenuItem name="2-1">1</MenuItem>
-            <MenuItem name="2-2">2</MenuItem>
-          </Submenu>
-          <Submenu name="5">
-            <template slot="title">
-              <Icon type="ios-stats"/>引擎管理
-            </template>
-            <MenuItem name="2-1">1</MenuItem>
-            <MenuItem name="2-2">2</MenuItem>
-          </Submenu>
-          <Submenu name="6">
-            <template slot="title">
-              <Icon type="ios-stats"/>文档管理
-            </template>
-            <MenuItem name="2-1">1</MenuItem>
-            <MenuItem name="2-2">2</MenuItem>
-          </Submenu>
-          <Submenu name="7">
-            <template slot="title">
-              <Icon type="ios-stats"/>系统管理
-            </template>
-            <MenuItem name="2-1">1</MenuItem>
-            <MenuItem name="2-2">2</MenuItem>
+            <MenuItem name="2-1" to="/content_page">漏洞统计报告-华大基因</MenuItem>
+            <MenuItem name="2-2" to="/content_page2">资产统计报告-华大基因</MenuItem>
           </Submenu>
         </Menu>
       </Sider>
@@ -113,7 +85,10 @@ export default {
   methods: {
     collapsedSider() {
       this.$refs.side1.toggleCollapse();
-    }
+    },
+    one_clk(e){
+      console.log(e)
+    },
   }
 };
 </script>

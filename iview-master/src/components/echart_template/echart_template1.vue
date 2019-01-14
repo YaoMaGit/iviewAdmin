@@ -33,7 +33,7 @@ export default {
           textStyle: {
             color: "#515a6e",
             fontStyle: "normal",
-            fontWeight: 'normal',
+            fontWeight: "normal",
             fontFamily: "sans-serif",
             fontSize: 14
           }

@@ -46,9 +46,9 @@ export default {
           data: ["百度", "必应", "其他"]
         },
         grid: {
-          left: "3%",
-          right: "5%",
-          bottom: "3%",
+          left: "1%",
+          right: "8%",
+          bottom: "5%",
           containLabel: true
         },
         xAxis: [
@@ -98,7 +98,7 @@ export default {
   width: 100%;
   height: 100%;
   // min-height: 250px;
-
+  padding-top: 10px;
   background: #fff;
 }
 </style>

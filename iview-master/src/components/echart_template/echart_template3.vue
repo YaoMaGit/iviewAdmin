@@ -2,10 +2,10 @@
   <div id="box">
     <div class="templ_top_div">
       <Row :gutter="16">
-        <Col span="14">
+        <Col span="12">
           <div>资产修复漏洞排名</div>
         </Col>
-        <Col span="10">
+        <Col span="12">
           <div>
             <RadioGroup v-model="buttonSize" type="button" size="small">
               <Radio label="large">Large</Radio>
@@ -17,7 +17,7 @@
       </Row>
     </div>
     <div class="table_div">
-      <Table border :columns="columns1" :data="data1" height="285"></Table>
+      <Table border :columns="columns1" :data="data1" height="180"></Table>
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@
 export default {
   data() {
     return {
-      buttonSize:'',
+      buttonSize: "",
       columns1: [
         {
           title: "Name",
@@ -90,7 +90,7 @@ export default {
 .table_div {
   width: 100%;
   height: 100%;
-  min-height: 250px;
+  min-height: 200px;
   padding: 10px;
 }
 #box {
