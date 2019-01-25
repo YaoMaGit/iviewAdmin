@@ -48,6 +48,9 @@ export default {
       name: ""
     };
   },
+  created(){
+    this.time()
+  },
   methods: {
     login_clk() {
       if (this.name != "" && this.password != "") {
@@ -58,6 +61,14 @@ export default {
       } else {
         this.$Message.warning("请输入用户名密码！");
       }
+    },
+    time() {
+      this.$Notice.open({
+        title: "默认账号",
+        desc:
+          "用户名：admin   密码: admin",
+        duration: 0
+      });
     }
   }
 };
@@ -78,7 +89,7 @@ export default {
   background: rgba(255, 255, 255, 0.3);
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 10px;
   border-radius: 5px;
-  cursor:pointer ;
+  cursor: pointer;
 }
 #card_div:hover {
   box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 10px;
@@ -89,11 +100,11 @@ export default {
   img {
     width: 80px;
   }
-  
+
   > div {
     margin-top: 30px;
     padding: 0 20px;
-    p{
+    p {
       font-size: 20px;
     }
   }
